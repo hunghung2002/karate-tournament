@@ -1,0 +1,348 @@
+:root {
+    --primary: #E63946; /* Đỏ đậm */
+    --secondary: #1D1D1D; /* Đen gần như */
+    --neutral: #F8F9FA; /* Trắng xám nhẹ */
+    --heading-font: 'Montserrat', Arial, sans-serif;
+    --body-font: 'Roboto', Arial, sans-serif;
+    --bs-font-sans-serif: var(--body-font); /* Bootstrap default font */
+    --bs-primary: var(--primary); /* Override Bootstrap primary color */
+    --bs-secondary: var(--secondary); /* Override Bootstrap secondary color */
+}
+
+body {
+    background: var(--neutral);
+    margin: 0;
+    font-family: var(--body-font);
+    color: var(--secondary);
+    line-height: 1.6;
+}
+
+/* General styles for main content area */
+main {
+    max-width: 1200px; /* Tăng max-width để nội dung rộng hơn */
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Shadow rõ hơn */
+    padding: 40px 30px;
+    text-align: center; /* Giữ nguyên text-align center cho main */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.8em; /* Tăng kích thước */
+    color: var(--primary); /* Màu đỏ cho tiêu đề chính */
+}
+
+p {
+    font-size: 1.1em;
+    color: #495057;
+}
+
+/* Header - Navbar Customization */
+.navbar {
+    background-color: var(--secondary) !important; /* Nền đen cho navbar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+}
+.navbar-brand img {
+    height: 50px; /* Kích thước logo */
+    transition: transform 0.3s ease-in-out;
+}
+.navbar-brand img:hover {
+    transform: scale(1.05);
+}
+.navbar-nav .nav-link {
+    color: #fff !important; /* Màu chữ trắng cho nav-link */
+    font-weight: 500;
+    font-size: 1.05em;
+    margin: 0 15px;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+.navbar-nav .nav-link:hover {
+    color: var(--primary) !important; /* Hover màu đỏ */
+}
+.navbar-nav .nav-link.active {
+    color: var(--primary) !important; /* Active màu đỏ */
+}
+.navbar-nav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px; /* Điều chỉnh vị trí gạch chân */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%; /* Độ dài gạch chân */
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 2px;
+}
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Buttons */
+.btn {
+    font-family: var(--heading-font);
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: #c02d38; /* Đỏ sẫm hơn */
+    border-color: #c02d38;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(var(--primary), 0.3);
+}
+.btn-secondary {
+    background-color: #fff;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+.btn-secondary:hover {
+    background-color: var(--primary);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(var(--primary), 0.3);
+}
+
+/* Forms */
+form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    max-width: 500px;
+    margin: 30px auto;
+}
+form input[type="text"],
+form input[type="password"],
+form input[type="number"],
+form select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+form input:focus,
+form select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(var(--primary), 0.25);
+    outline: none;
+}
+form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+form button[type="submit"]:hover {
+    background-color: #c02d38;
+}
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-align: left;
+}
+form p {
+    margin-top: 15px;
+    font-size: 0.95em;
+}
+
+/* Cards (Features & Tournaments) */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Đảm bảo chiều cao đồng nhất */
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+.card-body {
+    padding: 30px;
+}
+.card-title {
+    font-size: 1.6em;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+.card-text {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, var(--primary), #ff6b6b); /* Gradient background */
+    color: #fff;
+    padding: 80px 0;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+.hero-img img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    aspect-ratio: 1.2/1;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    background: #f8f9fa;
+}
+.hero-content h1 {
+    font-size: 3.5em;
+    color: #fff; /* Tiêu đề trắng trên nền đỏ */
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+.hero-content p {
+    font-size: 1.3em;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+}
+
+/* Call to Action Banner */
+.cta-banner {
+    background: var(--primary);
+    color: #fff;
+    padding: 60px 0;
+    margin-top: 60px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.cta-banner h2 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+/* Footer */
+footer {
+    background: var(--secondary);
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 0;
+    }
+    .hero-img, .hero-content {
+        width: 100%;
+        padding: 0 20px;
+    }
+    .hero-img {
+        margin-bottom: 30px;
+    }
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+    .hero-content p {
+        font-size: 1.1em;
+    }
+    .navbar-nav .nav-link.active::after {
+        bottom: -5px;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 30px 20px;
+        margin: 20px auto;
+    }
+    h1 {
+        font-size: 2.2em;
+    }
+    .hero {
+        padding: 40px 0;
+    }
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .cta-banner {
+        padding: 40px 0;
+        margin-top: 40px;
+    }
+    .cta-banner h2 {
+        font-size: 1.8em;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .card-body {
+        padding: 20px;
+    }
+    .card-title {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        height: 40px;
+    }
+    .navbar-nav .nav-link {
+        font-size: 0.95em;
+        margin: 5px 0;
+        text-align: center;
+    }
+    .navbar-nav .nav-link.active::after {
+        width: 40%;
+    }
+    form {
+        padding: 20px;
+    }
+    form input, form select, form button {
+        font-size: 0.95em;
+        padding: 10px;
+    }
+    .hero-img img {
+        max-width: 90%;
+        border-radius: 15px;
+    }
+}
